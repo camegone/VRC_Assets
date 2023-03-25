@@ -31,7 +31,7 @@ namespace hiscan.udon
 
         private void Update()
         {
-            if (_isUrlChanged) 
+            if (_isUrlChanged && core.isPlaying) 
             {
                 if (interval <= _timerCount)
                 {
