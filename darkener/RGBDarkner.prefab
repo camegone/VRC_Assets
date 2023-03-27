@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -584,7 +584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1319,6 +1319,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 45.99996
       objectReference: {fileID: 0}
+    - target: {fileID: 5975815622460418933, guid: a4947e558efbaae42b436acf4684860f,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5975815622694531285, guid: a4947e558efbaae42b436acf4684860f,
         type: 3}
       propertyPath: m_SizeDelta.y
@@ -1347,7 +1352,7 @@ PrefabInstance:
     - target: {fileID: 5975815623057836914, guid: a4947e558efbaae42b436acf4684860f,
         type: 3}
       propertyPath: m_Name
-      value: DarkenerAndController(RGB)
+      value: RGBDarkner
       objectReference: {fileID: 0}
     - target: {fileID: 5975815623057836915, guid: a4947e558efbaae42b436acf4684860f,
         type: 3}
@@ -1377,17 +1382,17 @@ PrefabInstance:
     - target: {fileID: 5975815623057836915, guid: a4947e558efbaae42b436acf4684860f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5975815623057836915, guid: a4947e558efbaae42b436acf4684860f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5975815623057836915, guid: a4947e558efbaae42b436acf4684860f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5975815623057836915, guid: a4947e558efbaae42b436acf4684860f,
         type: 3}

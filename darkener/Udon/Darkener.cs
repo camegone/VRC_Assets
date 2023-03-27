@@ -12,11 +12,14 @@ namespace camegone.Darkener
     {
         public float _brightness = 1.0f;
         public Color _tint = new Color(1.0f, 1.0f, 1.0f, 1.0f);
-        public MeshRenderer _darkener;
-        public Slider _bright;
-        public Slider _red;
-        public Slider _green;
-        public Slider _blue;
+        [SerializeField] private Slider _bright;
+        [SerializeField] private Slider _red;
+        [SerializeField] private Slider _green;
+        [SerializeField] private Slider _blue;
+
+        [SerializeField] private MeshRenderer _darkener;
+
+        private Color white = new Color(1.0f, 1.0f, 1.0f, 1.0f);
 
         void Start()
         {
@@ -24,12 +27,21 @@ namespace camegone.Darkener
         }
 
         public void UpdateColor() {
+            UpdateRenderer();
             _darkener.material.SetColor("_UdonDarkenerColor", _tint * VecBright(_brightness));
         }
 
         Color VecBright(float b)
         {
-            return new Color(b, b, b, 1);
+            return new Color(b, b, b, 1.0f);
+        }
+
+        void UpdateRenderer()
+        {
+            if (_brightness >= 1.0f && _tint == white)
+                _darkener.enabled = false;
+            else
+                _darkener.enabled = true;
         }
 
         float GetSliderVal(Slider slider) 
