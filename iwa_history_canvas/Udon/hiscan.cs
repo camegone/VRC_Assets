@@ -11,16 +11,17 @@ namespace hiscan.udon
 {
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)] public class hiscan : VideoControllerEventListener
     {
-        public VideoCore core;
-        public Text text;
-        public float interval = 5.0f;
+        [SerializeField] private VideoCore core;
+        [SerializeField] private Text text;
+        [SerializeField] private float interval = 5.0f;
+        [SerializeField] private string initialText = "Udoooon!!";
         private float _timerCount = 0.0f;
         private bool _isUrlChanged = false;
         private string _messageOld = "";
 
         private void Start()
         {
-            text.text = "Udoooon!!";
+            text.text = initialText;
             core.AddListener(this);
         }
 

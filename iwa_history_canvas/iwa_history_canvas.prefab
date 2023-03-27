@@ -203,7 +203,8 @@ MonoBehaviour:
   _udonSharpBackingUdonBehaviour: {fileID: 2135450573724533769}
   core: {fileID: 0}
   text: {fileID: 3474047557517777742}
-  interval: 5
+  interval: 1
+  initialText: Udoooon!!
 --- !u!114 &2135450573724533769
 MonoBehaviour:
   m_ObjectHideFlags: 0
