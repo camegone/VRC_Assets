@@ -10,5 +10,5 @@ shows history of [iwasync3 video player](https://booth.pm/ja/items/2666275) (dat
 ## Darkener.unitypackage
 Quest compatible nightmode slider. includes w/ RGB slider variant.
 
-## MoonGazerNotifier
+## MoonGazerNotifier.unitypackage
 Send detail of video playing on [iwasync3](https://booth.pm/ja/items/2666275) via [Lunar World Notification](https://weloveyou-runa.booth.pm/items/4485880)
