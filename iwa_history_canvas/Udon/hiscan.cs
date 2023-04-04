@@ -11,18 +11,22 @@ namespace hiscan.udon
 {
     [UdonBehaviourSyncMode(BehaviourSyncMode.None)] public class hiscan : VideoControllerEventListener
     {
-        [SerializeField] private VideoCore core;
-        [SerializeField] private Text text;
-        [SerializeField] private float interval = 5.0f;
-        [SerializeField] private string initialText = "Udoooon!!";
+        [SerializeField] private VideoCore _core;
+        [SerializeField] private Text _text;
+        [SerializeField] private float _interval = 5.0f;
+        [SerializeField] private string _initialText = "Udoooon!!";
         private float _timerCount = 0.0f;
         private bool _isUrlChanged = false;
-        private string _messageOld = "";
 
         private void Start()
         {
-            text.text = initialText;
-            core.AddListener(this);
+            if (_core == null)
+                _core = GameObject.Find("Udon (VideoCore)").GetComponent<VideoCore>();
+            if (_text == null)
+                _text = this.GetComponent<Text>();
+
+            _text.text = _initialText;
+            _core.AddListener(this);
         }
 
         public override void OnChangeURL()
@@ -32,15 +36,12 @@ namespace hiscan.udon
 
         private void Update()
         {
-            if (_isUrlChanged && core.isPlaying) 
+            if (_isUrlChanged && _core.isPlaying) 
             {
-                if (interval <= _timerCount)
+                if (_interval <= _timerCount)
                 {
                     _timerCount = 0.0f;
-                    if (!_messageOld.Equals(core.Message))
-                    {
-                        UpdateText();
-                    }
+                    UpdateText();
                 }
                 else
                 {
@@ -51,11 +52,11 @@ namespace hiscan.udon
 
         private void UpdateText()
         {
-            text.text = $"<color=silver>[{System.DateTime.Now.ToString()}]</color>\n" +
-                $"Title:{core.Message}\n" +
-                $"<color=teal>URL:{core.url.ToString()}</color>\n\n" +
-                $"{text.text}";
-            _messageOld = core.Message;
+            _text.text = $"<color=silver>[{System.DateTime.Now.ToString()}]</color>\n" +
+                $"Title:{_core.Message}\n" +
+                $"<color=teal>URL:{_core.url.ToString()}</color>\n\n" +
+                $"{_text.text}";
+            _timerCount = 0.0f;
             _isUrlChanged = false;
         }
 

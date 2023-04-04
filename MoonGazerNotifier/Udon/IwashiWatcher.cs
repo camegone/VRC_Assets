@@ -17,7 +17,6 @@ namespace camegone.MoonGazerNotifier
 
         private float _timerCount = 0.0f;
         private bool _isUrlChanged = false;
-        private string _messageOld = "";
 
         const string _title = "Iwasync3VideoPlayer";
 
@@ -43,10 +42,7 @@ namespace camegone.MoonGazerNotifier
                 if (_interval <= _timerCount)
                 {
                     _timerCount = 0.0f;
-                    if (!_messageOld.Equals(_videocore.Message))
-                    {
-                        OnChangeVideo();
-                    }
+                    OnChangeVideo();
                 }
                 else
                 {
@@ -58,7 +54,6 @@ namespace camegone.MoonGazerNotifier
         private void OnChangeVideo()
         {
             _sender.SendNotification("Now Playing", FormattedMessage());
-            _messageOld = _videocore.Message;
             _isUrlChanged = false;
             _timerCount = 0.0f;
         }
