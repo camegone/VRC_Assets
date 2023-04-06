@@ -13,3 +13,4 @@ Quest compatible nightmode slider. includes "with RGB slider" variant.
 
 ## MoonGazerNotifier.unitypackage
 Send detail of video playing on [iwasync3](https://booth.pm/ja/items/2666275), to [Lunar World Notification](https://weloveyou-runa.booth.pm/items/4485880) system.
+Automatically attach objects on runtime, but you can specify them on your Editor.
